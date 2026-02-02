@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Arachnid: Open-World Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/examples/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+          "@dimforge/rapier3d-compat": "https://cdn.skypack.dev/@dimforge/rapier3d-compat"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="hud"></div>
+    <div id="loading">Initializing city systems…</div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
