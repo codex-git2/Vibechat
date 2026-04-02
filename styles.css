@@ -1,0 +1,137 @@
+:root {
+  color-scheme: dark;
+  --bg: #10131a;
+  --panel: #1a1f2b;
+  --panelBorder: #2a3142;
+  --text: #eef3ff;
+  --muted: #b7c1da;
+  --accent: #76b3ff;
+  --ok: #9effb2;
+  --warn: #ffde8b;
+  --error: #ff9da5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(1200px circle at top, #1a2338, var(--bg));
+  color: var(--text);
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.panel {
+  background: color-mix(in srgb, var(--panel) 92%, #000 8%);
+  border: 1px solid var(--panelBorder);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.controls .row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+input,
+select,
+textarea,
+button,
+.uploadBtn {
+  border-radius: 10px;
+  border: 1px solid #37425f;
+  background: #111723;
+  color: var(--text);
+  padding: 10px 12px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 430px;
+  width: 100%;
+  resize: vertical;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.split {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+}
+
+.buttonRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button,
+.uploadBtn {
+  cursor: pointer;
+  border-color: #47618f;
+}
+
+button:hover,
+.uploadBtn:hover {
+  border-color: var(--accent);
+}
+
+.uploadBtn {
+  display: inline-flex;
+  align-items: center;
+}
+
+#fileInput {
+  display: none;
+}
+
+#status {
+  margin: 0;
+  min-height: 3lh;
+  white-space: pre-wrap;
+}
+
+.status-ok {
+  color: var(--ok);
+}
+
+.status-warn {
+  color: var(--warn);
+}
+
+.status-error {
+  color: var(--error);
+}
+
+@media (max-width: 900px) {
+  .controls .row {
+    grid-template-columns: 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+}

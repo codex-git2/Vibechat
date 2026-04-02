@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockbench ➜ KubeJS Animation Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Blockbench ➜ KubeJS (Palladium) Animation Converter</h1>
+      <p class="subtitle">
+        Paste or upload Blockbench animation JSON and generate a KubeJS-ready script skeleton.
+      </p>
+
+      <section class="panel controls">
+        <div class="row">
+          <label for="animationType">Animation target</label>
+          <select id="animationType">
+            <option value="model">Model animation</option>
+            <option value="player">Player animation</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="addonId">Addon namespace / id</label>
+          <input id="addonId" type="text" placeholder="example: my_addon" value="my_addon" />
+        </div>
+
+        <div class="row">
+          <label for="animationId">Fallback animation id</label>
+          <input id="animationId" type="text" placeholder="example: walk" value="walk" />
+        </div>
+
+        <div class="buttonRow">
+          <label class="uploadBtn" for="fileInput">Upload .json</label>
+          <input id="fileInput" type="file" accept=".json,application/json" />
+          <button id="convertBtn" type="button">Convert</button>
+          <button id="copyBtn" type="button">Copy Output</button>
+        </div>
+      </section>
+
+      <section class="panel split">
+        <div>
+          <h2>Blockbench JSON</h2>
+          <textarea
+            id="inputJson"
+            spellcheck="false"
+            placeholder='Paste Blockbench JSON (from .bbmodel export or animations JSON)...'
+          ></textarea>
+        </div>
+
+        <div>
+          <h2>KubeJS Output</h2>
+          <textarea id="outputScript" spellcheck="false" readonly></textarea>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Status</h2>
+        <pre id="status">Ready.</pre>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
